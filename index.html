@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Freelance Portfolio</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            padding: 40px;
+            background-color: #111;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .section {
+            padding: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+        }
+
+        #projects {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .project-card {
+            background-color: #222;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            width: 200px;
+            transition: transform 0.2s;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        #contact a {
+            color: #00ffff;
+            text-decoration: none;
+        }
+
+        #contact a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Freelance Portfolio</h1>
+        <p>14-year-old aspiring developer</p>
+        <button onclick="toggleGreeting()">Click Me!</button>
+        <p id="greeting"></p>
+    </header>
+
+    <div class="section" id="projects">
+        <div class="project-card">
+            <h3>Guess Game</h3>
+            <p>Python console game</p>
+        </div>
+        <div class="project-card">
+            <h3>Calculator</h3>
+            <p>Python interactive calculator</p>
+        </div>
+        <div class="project-card">
+            <h3>Website Demo</h3>
+            <p>This very page!</p>
+        </div>
+    </div>
+
+    <div class="section" id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+        <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+    </div>
+
+    <div class="section">
+        <button onclick="changeColor()">Change Background</button>
+        <button onclick="toggleMode()">Dark/Light Mode</button>
+    </div>
+
+    <script>
+        function toggleGreeting() {
+            const greet = document.getElementById("greeting");
+            if(greet.innerText === "") {
+                greet.innerText = "Welcome to my portfolio!";
+            } else {
+                greet.innerText = "";
+            }
+        }
+
+        function changeColor() {
+            const colors = ["black", "darkblue", "darkred", "darkgreen", "purple"];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+
+        function toggleMode() {
+            if(document.body.style.backgroundColor === "white") {
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white";
+            } else {
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "black";
+            }
+        }
+    </script>
+</body>
+</html>
